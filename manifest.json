@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Tyagi",
+  "version": "1.0",
+  "icons":
+      {
+        "48":"akash.png"
+      },
+	"browser_action":
+      {
+        "default_icon":"akash.png",
+		    "default_popup": "popup.html"
+      },
+  "permissions": 
+        [
+          "http://127.0.0.1:5000/",
+          "activeTab",
+          "storage"
+        ],
+    "web_accessible_resources":
+        [
+            "images/*.png"
+        ],
+    "background":
+        {
+          "scripts": ["scripts/background.js"]
+        },
+    "content_scripts": 
+        [
+            {
+                "matches": ["<all_urls>"],
+                "js": ["content1.js"]
+            }
+        ]
+
+}
